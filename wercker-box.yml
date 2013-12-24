@@ -3,7 +3,7 @@ version: 0.0.1
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type: main
 platform: ubuntu@12.04
-description: wercker box for lispers who dig sbcl
+description: wercker box for lisp 
 keywords: 
   - common lisp
   - sbcl
@@ -11,10 +11,5 @@ packages: sbcl@1.1.14
 script: |
  sudo apt-get install sbcl
  curl -O http://beta.quicklisp.org/quicklisp.lisp
- sbcl --load quicklisp.lisp <<EOF
-(quicklisp-quickstart:install)
-(ql:quickload "quicklisp-slime-helper")
-(ql:add-to-init-file)
-EOF
-
+ sbcl --load quicklisp.lisp 
 
