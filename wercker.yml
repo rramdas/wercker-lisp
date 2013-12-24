@@ -1,7 +1,7 @@
 name: sbcl
 version: 0.0.1
-inherits: wercker/ubuntu12.04
-type: service
+inherits: wercker/ubuntu12.04-webessentials@0.0.3
+type: main
 platform: ubuntu@12.04
 description: wercker box for lispers who dig sbcl
 keywords: 
