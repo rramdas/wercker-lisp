@@ -1,0 +1,20 @@
+name: sbcl
+version: 0.0.1
+inherits: wercker/ubuntu12.04
+type: service
+platform: ubuntu@12.04
+description: wercker box for lispers who dig sbcl
+keywords: 
+  - common lisp
+  - sbcl
+packages: sbcl@1.1.14
+script: |
+ sudo apt-get install sbcl
+ curl -O http://beta.quicklisp.org/quicklisp.lisp
+ sbcl --load quicklisp.lisp <<EOF
+(quicklisp-quickstart:install)
+(ql:quickload "quicklisp-slime-helper")
+(ql:add-to-init-file)
+EOF
+
+
